@@ -5,7 +5,7 @@
     My objective: To code a solution thinking about a 'maintainable' system for this execise. Imagining the code would be used for other people.
 */
 
-// converts minutes to hours and minutes format (00:00) and returns an array of 4 positions
+// converts minutes to hours and minutes format (00:00) and returns it as an array
 function minutesToHoursAndMinutes($minutes){
     $hours = 0;
     while ($minutes > 59){
