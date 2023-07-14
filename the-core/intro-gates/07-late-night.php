@@ -1,4 +1,3 @@
-
 <?php
 /*
     Exercise: Intro Gates - Late Ride
