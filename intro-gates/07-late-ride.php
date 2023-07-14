@@ -2,7 +2,7 @@
 /*
     Exercise: Intro Gates - Late Ride
     Exercise link: https://app.codesignal.com/arcade/code-arcade/intro-gates/aiKck9MwwAKyF8D4L
-    My objective: To code a solution thinking about a 'maintainable' system for this execise. Imagining the code would be used for other people.
+    My objective: To code a solution thinking about a 'maintainable' system for this execise. Imagining the code would be used by other people.
 */
 
 // converts minutes to hours and minutes format (00:00) and returns an array of 4 positions
