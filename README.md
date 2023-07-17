@@ -1,6 +1,6 @@
 # objective
-I've created this repo with the objective to share the codes I've created for the Code Signal exercises with the to build portfolio.
+I created this repository with the aim of sharing the codes I created for the CodeSignal exercises with the intention of building a portfolio and receiving feedback.
 
 # my profile 
-This is my personal Code Signal profile: https://app.codesignal.com/profile/silmarillion777
+This is my personal CodeSignal profile: https://app.codesignal.com/profile/silmarillion777
 It's possible to check all my solutions through the profile.
