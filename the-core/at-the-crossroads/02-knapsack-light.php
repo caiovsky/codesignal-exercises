@@ -42,7 +42,8 @@ class Inventory {
     public function getValue(): int {
         return $this->curValue;
     }   
-     
+    
+    // if item is 'grabbable', add its weight and value to inventory 
     public function receiveItem($item): void {
         if($this->curWeight + $item->getWeight() <= $this->maxWeight){
             $this->curValue += $item->GetValue(); 
@@ -59,6 +60,8 @@ function solution($value1, $weight1, $value2, $weight2, $maxW): int {
     
     $inventory = new Inventory($maxW);
     
+
+    // checking value priority 
     if($itemOne->getValue() > $itemTwo->getValue()) {
         $inventory->receiveItem($itemOne);
         $inventory->receiveItem($itemTwo);
