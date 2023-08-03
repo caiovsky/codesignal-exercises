@@ -5,9 +5,6 @@
  * ===============================================
  *  Exercise link: https://app.codesignal.com/interview-practice/question/pMvymcahZ8dY4g75q
  *  My objective: Generate understandable code and solve the exercise.
- *  Additional Comments: My initial solution was simpler and involved mostly array_keys(),
- * however, I had some memory issues in that case, around tests 21~. I decided then to optimize 
- * the process by feeding $aux 
  *  PHP Version: 8.0.27
  * ===============================================
  */
@@ -30,9 +27,11 @@ function solution(array $a): int {
     $answer = -1;
     $minIndex = INF;
 
-    // feeds $aux with values from $array
+    /**
+     * feeds $aux with values from $array,
+     * array_keys() is a viable solution, but I believe it's less optimized
+     */
     for($i = 0; $i < count($array); $i++) {
-        // if $array[$i] key doesn't exist in $aux, $aux receives new key $array[$i]
         if(!array_key_exists($array[$i], $aux)) {
             $aux[$array[$i]][0] = $i;
             $pos[$array[$i]] = 0;
@@ -43,7 +42,7 @@ function solution(array $a): int {
         $pos[$array[$i]] += 1;
     }
 
-    // iterates through $aux and checks for minimal index
+    // iterates through $aux and searches for the minimal index
     for($i = 1; $i < count($array)+1; $i++) {
         if(isset($aux[$i][1]) && $aux[$i][1] < $minIndex) {
             $minIndex = $aux[$i][1];
