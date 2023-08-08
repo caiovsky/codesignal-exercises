@@ -1,31 +1,36 @@
 <?php
 
-function solution (array $matrix): int {
-    $ghostedIndexes = [];
-    $answer = 0;
+/**
+ *   Exercise: Edge of the Ocean - matrixElementsSum
+ * ===============================================
+ *   Exercise link: https://app.codesignal.com/arcade/intro/level-2/xskq4ZxLyqQMCLshr
+ *   My objective: Solve the exercise and generate readable code.
+ *   PHP Version: 8.0.27
+ * ***********************************************
+ */
 
-    // changes $matrix with 0s
+/** Return the total sum of all rooms suitable for the CodeBots.
+ * @param array $matrix
+ * @return int
+ */
+function solution(array $matrix): int {
+    $ghostedIndexes = [];
+    $totalSum = 0;
+
+    // Apply 0s' changes and track ghosted indexes
     foreach ($matrix as $row => $column) {
         foreach ($column as $index => $value) {
-            if(in_array($index, $ghostedIndexes)) {
+            if (in_array($index, $ghostedIndexes) || $value === 0) {
                 $matrix[$row][$index] = 0;
-            }
-            if ($value == 0) {
                 $ghostedIndexes[] = $index;
             }
         }
     }
 
-    // sums all values into $answer
-    foreach ($matrix as $row => $column) {
-        foreach ($column as $index => $value) {
-            $answer += $value;
-        }
+    // Calculate the total sum
+    foreach ($matrix as $row) {
+        $totalSum += array_sum($row);
     }
 
-    return $answer;
+    return $totalSum;
 }
-
-echo solution([[1,1,1,0],
-          [0,5,0,1],
-          [2,1,3,10]]);
